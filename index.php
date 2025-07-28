@@ -9,6 +9,7 @@
 </head>
     <body>
         <form class="login">
+            <h3 class="labellogin">CRUD</h3>
         <!-- Entrada de usuario -->
         <div data-mdb-input-init class="form-outline mb-4">
             <input type="text" id="usuario" class="form-control" placeholder="Usuario" required/>
@@ -27,13 +28,13 @@
             <!-- Checkbox -->
             <div class="form-check">
                 <input onclick="mostrar()" class="form-check-input" type="checkbox" value="mostrar" id="form2Example31" unchecked />
-                <label class="form-check-label" for="form2Example31"> Mostras Contrasena </label>
+                <label class="form-check-label" for="form2Example31"> Mostrar Contraseña </label>
             </div>
             </div>
         </div>
 
         <!-- Boton Acceder -->
-        <button onclick="log()" type="button" id="log" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Acceder</button>
+        <button onclick="acceder()" type="button" id="log" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Acceder</button>
 
         <!-- Buton GitHub -->
         <div class="text-center">
