@@ -1,0 +1,56 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2; /* color suave de fondo */
+}
+
+.login{
+  width: 100%;
+  max-width: 400px; /* tamaño ideal para formularios */
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#usuario:focus::placeholder{
+    opacity: 0;
+}
+
+#contraseña:focus::placeholder{
+    opacity: 0;
+}
+
+.form-outline {
+  position: relative;
+}
+
+.form-control {
+  padding-top: 1.5rem; /* espacio para el label encima */
+}
+
+.form-label {
+  position: absolute;
+  top: 1rem;
+  left: 0.75rem;
+  color: #666;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Activar cuando el input está enfocado */
+.form-outline input:focus ~ .form-label,
+.form-outline input:valid ~ .form-label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: #007BFF;
+}
+
+.form-check{
+    font-size: 12px;
+    padding-top: 5%;
+}
