@@ -8,14 +8,29 @@ function mostrar(){
 
 
 function acceder(){
-    const usuario = document.getElementById("usuario").value;
-    const contra = document.getElementById("contraseña").value;
+    
+    const usuario = document.getElementById('usuario').value;
+    const contraseña = document.getElementById('contraseña').value;
 
-    if(usuario == "admin" && contra == "admin"){
-        window.location.href = "#!";
-    } else{
-        alert("Usuario o Contraseña invalido ");
-    }
+    fetch('includes/auth.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `usuario=${encodeURIComponent(usuario)}&contraseña=${encodeURIComponent(contraseña)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            
+            window.location.href = 'dashboard.php'; // redirige al panel de administración
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
 }
 

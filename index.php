@@ -1,3 +1,6 @@
+<?php
+    
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -48,9 +51,8 @@ Contraseña: admin</pre>
             </button>
         </div>
         </form>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.js">
-
-        </script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.js"></script>-->
+        <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.es.min.js"></script>
         <script src="js/script.js"> </script>
     </body>
 </html>
