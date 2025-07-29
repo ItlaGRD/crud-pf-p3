@@ -1,10 +1,13 @@
 <?php
+
+require_once 'includes/db.php';
+
 session_start();
+
 if (!isset($_SESSION['admin_id'])) {
     header("Location: index.php");
     exit();
 }
-require_once 'includes/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -98,6 +101,7 @@ require_once 'includes/db.php';
                             <table id="datatablesSimple" class="table table-bordered">
                                 <thead>
                                     <tr>
+                                        <th>Id</th>
                                         <th>Nombre</th>
                                         <th>Oficio</th>
                                         <th>Dirección</th>
@@ -107,22 +111,31 @@ require_once 'includes/db.php';
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                  /*  $stmt = $pdo->query("SELECT * FROM usuarios");
-                                    while ($row = $stmt->fetch()) {
-                                        echo "<tr>
-                                            <td>{$row['nombre']}</td>
-                                            <td>{$row['oficio']}</td>
-                                            <td>{$row['direccion']}</td>
-                                            <td>{$row['edad']}</td>
-                                            <td>{$row['correo']}</td>
-                                            <td>
-                                                <a href='includes/editar.php?id={$row['id']}' class='text-primary'>Editar</a> |
-                                                <a href='includes/borrar.php?id={$row['id']}' class='text-danger'>Borrar</a>
-                                            </td>
-                                        </tr>";
-                                    }*/
-                                    ?>
+                                <?php
+                                $db = new DB_Conexion();
+                                $usuarios = $db->obtenerUsuarios();
+
+                                foreach ($usuarios as $usuario) {
+                                    echo "<tr>
+                                        <td>{$usuario['id']}</td>
+                                        <td>{$usuario['nombre']}</td>
+                                        <td>{$usuario['oficio']}</td>
+                                        <td>{$usuario['direccion']}</td>
+                                        <td>{$usuario['edad']}</td>
+                                        <td>{$usuario['correo']}</td>
+                                        <td>
+                                            <a href='includes/editar.php?id={$usuario['id']}' class='btn btn-sm btn-primary'>
+                                                <i class='fas fa-edit'></i> Editar
+                                            </a>
+                                            <a href='includes/borrar.php?id={$usuario['id']}' class='btn btn-sm btn-danger' onclick='return confirm(\"¿Estás seguro de que deseas borrar este usuario?\");'>
+                                                <i class='fas fa-trash-alt'></i> Borrar
+                                            </a>
+                                        </td>
+                                    </tr>";
+                                }
+                                ?>
+
+
                                 </tbody>
                             </table>
                         </div>
