@@ -15,7 +15,7 @@ if (!$usuario) {
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuario</title>
-    <link rel="stylesheet" href="../css/stylesDash.css">
+    <link rel="stylesheet" href="../css/stylesEditar.css">
 </head>
 <body>
     <h2>Editar Usuario</h2>
