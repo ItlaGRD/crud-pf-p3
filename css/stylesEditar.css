@@ -1,0 +1,65 @@
+/* stylesEditar.css */
+
+body {
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.6em; /* tamaño moderado */
+    margin-bottom: 15px;
+}
+
+form {
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e5e2e2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    border: none;
+    background-color: #6c63ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #574de5;
+}
